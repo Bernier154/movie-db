@@ -1,0 +1,29 @@
+.header-container {
+    z-index: 999;
+    height: 4em!important;
+    header {
+        height: 4em!important;
+
+        .logo{
+            padding-right: 2em;
+            display: flex;
+            img {
+                height: 1.5em;
+                padding-right: 0.3em;
+                vertical-align:text-top;
+
+            }
+            font-size: 2em;
+            font-weight: 300;
+            color:#eee;
+        }
+        button {
+            align-self:center;
+            margin-right: 1em;
+            white-space: nowrap;
+        }
+        .dropdown {
+            align-self: center;
+        }
+    }
+}

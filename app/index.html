@@ -2,15 +2,90 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Electron Movie Db</title> 
     <link rel="stylesheet" href="scss/main.css">
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+  <body class="bg-light">
+    <div class="container-fluid position-fixed header-container">
+      <div class="row">
+        <div class="col-12 p-0">
+          <header class="p-2 bg-dark d-flex flex-row">
+            <div class="logo">
+              <img src="./images/logo.png"  title="Electron movie database version 0.1" alt=""> 
+              EMDB
+            </div>
+            <button  class="btn  btn-secondary">Ajouter un film</button>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sauvegarde
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Enregistrer un copie de la liste</a>
+                <a class="dropdown-item" href="#">Rétablir une ancienne sauvegarde</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tri des films
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <h6 class="dropdown-header">Trier par: </h6>
+                <a class="dropdown-item" href="#">Titre</a>
+                <a class="dropdown-item" href="#">Genre</a>
+                <a class="dropdown-item" href="#">Année</a>
+                <a class="dropdown-item" href="#">Numéro de référence</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Isoler les films
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <h6 class="dropdown-header">Isoler par: </h6>
+                <a class="dropdown-item" href="#">Genre</a>
+                <a class="dropdown-item" href="#">Année</a>
+                <a class="dropdown-item" href="#">Numéro de référence</a>
+              </div>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid main">
+
+      <div class="row">
+        <div class="col-10 p-0">
+          <table class="table table-bordered table-sm table-hover">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Support</th>
+                <th scope="col"># Référence</th>
+                <th scope="col">Année</th>
+                <th scope="col">Durée</th>
+                <th scope="col">Vu?</th>
+                <th scope="col">Note</th>
+                <th scope="col">Date d'ajout</th>
+                <th scope="col">Classification</th>
+
+              </tr>
+            </thead>
+            <tbody id="films">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
   </body>
+  <script>
+    window.jQuery = window.$ = require('./scripts/jquery-3.4.1.min.js');
+  </script>
+  <script src="scripts/bootstrap.bundle.min.js"></script>
+  <script src="scripts/main_window.js"></script>
 </html>
