@@ -10765,7 +10765,50 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .main {
-  padding-top: 4em;
+  height: 100vh;
+}
+
+.main .row {
+  padding-top: 3.95em;
+  height: 100%;
+}
+
+.main .row .limit-height-scroll {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.sticky-thead {
+  top: 0;
+  z-index: 99;
+}
+
+.pull-right:before, .pull-right:after {
+  right: 1rem !important;
+  left: inherit !important;
+}
+
+table {
+  table-layout: fixed;
+  width: auto;
+}
+
+table th.dragover {
+  -webkit-box-shadow: inset 2px 0px 0px 0px #dc3545;
+          box-shadow: inset 2px 0px 0px 0px #dc3545;
+}
+
+table td, table th {
+  font-size: 0.8em;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .header-container {
